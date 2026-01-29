@@ -1,6 +1,6 @@
 ﻿
 @model Mvc_Project.Models.Employee
-<h2 class ="text-primary text-center">Employee Details</h2>
+<h2 class ="text-danger text-center">Employee Details</h2>
 <table class=" table table-bordered table-active table-striped">
     <thead>
         <tr>
@@ -11,6 +11,20 @@
 
         </tr>
     </thead>
+    <tbody>
+        <tr>
+            <td> @Model.Empno</td>
+            <td> @Model.Name</td>
+            <td> @Model.Address</td>
+            <td> @Model.Salary</td>
+        </tr>
+        <tr>
+            <td>@Model.Empno</td>
+            <td>@Model.Name</td>
+            <td>@Model.Address</td>
+            <td>@Model.Salary</td>
+        </tr>
+    </tbody>
 </table>
 
 
