@@ -26,13 +26,14 @@ namespace Mvc_Project.Controllers
 
 
             //Employee employee = new Employee { Empno = 101 ,Name = "Aarav", Address = "GBS", Salary = 1000};
-            //Employee emp = new Employee()
-            //{
-            //    Empno = 101,
-            //    Name = "John Doe",
-            //    Address = "123 Main St",
-            //    Salary = 50000
-            //};
+            Employee emp = new Employee()
+            {
+                Empno = 101,
+                Name = "John Doe",
+                Address = "123 Main St",
+                Salary = 50000
+            }
+            ;
 
             // Employee employee = new Employee { Empno = 102, Name = "Aniket", Address = " GBS socity", Salary = 55000 };
             return View(employee);

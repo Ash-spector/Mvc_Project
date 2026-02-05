@@ -1,0 +1,22 @@
+﻿
+@model IEnumerable<Mvc_Project.Models.Student>
+<h2 class=" text-center text-bg-light text-dark"> Student Details</h2>
+@Html.ActionLink("New Students", "Update-insert", "Student", new { @class = "btn btn-info text-Success" })
+@if (Model.Any())
+{
+    <p class=" text-danger"> DATA NOT FOUND </p>
+}
+else
+{
+    <table class="table table-bordered table-striped table-info table-active">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Student Age</th>
+                <th>Student Address</th>
+                <th>Student Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead> 
+    </table>
+    }
