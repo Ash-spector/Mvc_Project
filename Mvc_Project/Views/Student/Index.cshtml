@@ -1,22 +1,41 @@
 ﻿
-@model IEnumerable<Mvc_Project.Models.Student>
-<h2 class=" text-center text-bg-light text-dark"> Student Details</h2>
-@Html.ActionLink("New Students", "Update-insert", "Student", new { @class = "btn btn-info text-Success" })
-@if (Model.Any())
+@model IEnumerable <Mvc_Project.Models.Student>
+
+<h2 class="text-center text-bg-light text-dark">Student Details</h2>
+
+@Html.ActionLink("New Students", "Updsert", "student", null, new { @class = "btn btn-info text-success" })
+
+@if (!Model.Any())
 {
-    <p class=" text-danger"> DATA NOT FOUND </p>
+    <p class="text-danger">DATA NOT FOUND</p>
 }
 else
 {
     <table class="table table-bordered table-striped table-info table-active">
         <thead>
             <tr>
-                <th>Student Name</th>
-                <th>Student Age</th>
-                <th>Student Address</th>
-                <th>Student Email</th>
+                <th> Name</th>
+                <th> Age</th>
+                <th> Address</th>
+                <th> Email</th>
                 <th>Actions</th>
             </tr>
-        </thead> 
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.Name</td>
+                    <td>@student.Age</td>
+                    <td>@student.Address</td>
+                    <td>@student.Email</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Upsert", "Student", new { id = student.Id }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("detail", "Details", "Student", new { id = student.Id }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Delete", "Delete", "Student", new { id = student.Id }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
     </table>
-    }
+}
