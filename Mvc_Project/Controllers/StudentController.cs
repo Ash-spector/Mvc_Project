@@ -43,5 +43,30 @@ namespace Mvc_Project.Controllers
 
             return View(student);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Upsert(Student student)
+        {
+            if (student == null) return HttpNotFound();
+
+            if (student.Id == 0)
+            {
+                context.Students.Add(student);
+            }
+            else
+            {
+                var studentInDb = context.Students.Find(student.Id);
+                if (studentInDb == null)
+                {
+                    return HttpNotFound();
+                }
+                studentInDb.Name = student.Name;
+                studentInDb.Age = student.Age;
+                studentInDb.Address = student.Address;
+                studentInDb.Email = student.Email;
+            }
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
