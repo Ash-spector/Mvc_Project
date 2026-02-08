@@ -18,11 +18,11 @@ namespace Mvc_Project.Controllers
             employee.Address = "GBS";
             employee.Salary = 1000;
 
-            Employee employee1 = new Employee();
-            employee.Empno = 102;
-            employee.Name = "Abhay sharma";
-            employee.Address = "Baddu";
-            employee.Salary = 999;
+            //Employee employee1 = new Employee();
+            //employee.Empno = 102;
+            //employee.Name = "Abhay sharma";
+            //employee.Address = "Baddu";
+            //employee.Salary = 999;
 
 
             //Employee employee = new Employee { Empno = 101 ,Name = "Aarav", Address = "GBS", Salary = 1000};
