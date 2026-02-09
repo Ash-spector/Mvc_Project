@@ -24,7 +24,7 @@ namespace Mvc_Project.Controllers
             return View(students);
         }
 
-        [ActionName("Update-insert")]
+        [ActionName("Upsert")]
         public ActionResult Upsert(int? id)
         {
             var student = new Student();

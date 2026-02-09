@@ -16,7 +16,7 @@ namespace Mvc_Project.Controllers
             employee.Empno = 101;
             employee.Name = "Aniket shukla";
             employee.Address = "GBS";
-            employee.Salary = 1000;
+            employee.Salary = 100000;
 
             //Employee employee1 = new Employee();
             //employee.Empno = 102;

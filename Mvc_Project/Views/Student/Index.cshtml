@@ -3,7 +3,7 @@
 
 <h2 class="text-center text-bg-light text-dark">Student Details</h2>
 
-@Html.ActionLink("New Students", "Updsert", "student", null, new { @class = "btn btn-info text-success" })
+@Html.ActionLink("New Students", "Upsert", "Student", null, new { @class = "btn btn-info text-success" })
 
 @if (!Model.Any())
 {
@@ -11,7 +11,7 @@
 }
 else
 {
-    <table class="table table-bordered table-striped table-info table-active">
+    <table class="table table-bordered table-active table-striped">
         <thead>
             <tr>
                 <th> Name</th>
@@ -30,8 +30,8 @@ else
                     <td>@student.Address</td>
                     <td>@student.Email</td>
                     <td>
-                        @Html.ActionLink("Edit", "Upsert", "Student", new { id = student.Id }, new { @class = "btn btn-primary" })
-                        @Html.ActionLink("detail", "Details", "Student", new { id = student.Id }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Edit", "Upsert", "Student", new { id = student.Id }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("Detail", "Details", "Student", new { id = student.Id }, new { @class = "btn btn-primary" })
                         @Html.ActionLink("Delete", "Delete", "Student", new { id = student.Id }, new { @class = "btn btn-danger" })
                     </td>
                 </tr>
