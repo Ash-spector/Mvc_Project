@@ -138,12 +138,17 @@
     <Compile Include="Migrations\202602051257492_initload.Designer.cs">
       <DependentUpon>202602051257492_initload.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202602091852281_addstudentvalidation.cs" />
+    <Compile Include="Migrations\202602091852281_addstudentvalidation.Designer.cs">
+      <DependentUpon>202602091852281_addstudentvalidation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-dark.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -159,6 +164,7 @@
     <Content Include="Content\bootstrap-utilities.rtl.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.minty.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="favicon.ico" />
@@ -232,6 +238,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202602051257492_initload.resx">
       <DependentUpon>202602051257492_initload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202602091852281_addstudentvalidation.resx">
+      <DependentUpon>202602091852281_addstudentvalidation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

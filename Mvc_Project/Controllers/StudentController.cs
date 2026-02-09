@@ -20,8 +20,8 @@ namespace Mvc_Project.Controllers
         // GET: Student
         public ActionResult Index()
         {
-            var students = context.Students.ToList();
-            return View(students);
+            var Students = context.Students.ToList();
+            return View(Students);
         }
 
         [ActionName("Upsert")]
@@ -48,6 +48,10 @@ namespace Mvc_Project.Controllers
         public ActionResult Upsert(Student student)
         {
             if (student == null) return HttpNotFound();
+            if (!ModelState.IsValid)return View(student);
+            {
+                return View(student);
+            }
 
             if (student.Id == 0)
             {
