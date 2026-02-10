@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mvc_Project.CustomValidations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Mvc_Project.Models
         public int Id { get; set; }
         [Required(ErrorMessage ="Naam to bhr laadle")]
         public string Name { get; set; }
-        [Range(20,30)]
+        [AgeValidation]
         public int Age { get; set; }
         [Required(ErrorMessage ="Chl pta daaal apna 🔪🔪")]
         public string Address { get; set; }

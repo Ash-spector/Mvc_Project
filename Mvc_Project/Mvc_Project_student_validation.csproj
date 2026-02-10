@@ -130,6 +130,8 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="CustomValidations\AgeValidation.cs" />
+    <Compile Include="CustomValidations\ValidateAttribute.cs" />
     <Compile Include="Data\ApplicationDbcontext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -204,6 +206,7 @@
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Student\Upsert.cshtml" />
+    <Content Include="Views\Student\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

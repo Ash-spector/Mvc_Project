@@ -1,9 +1,9 @@
 ﻿
 @model IEnumerable <Mvc_Project.Models.Student>
 
-<h2 class="text-center text-bg-light text-dark">Student Details</h2>
+<h2 class="text-center text-bg-success text-info">Student Details</h2>
 
-@Html.ActionLink("New Students", "Upsert", "Student", null, new { @class = "btn btn-info text-success" })
+@Html.ActionLink("New Students", "Upsert", "Student", null, new { @class = "btn  btn-bg-info text-info" })
 
 @if (!Model.Any())
 {
@@ -38,4 +38,5 @@ else
             }
         </tbody>
     </table>
+
 }

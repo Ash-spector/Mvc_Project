@@ -1,9 +1,6 @@
 ﻿using Mvc_Project.Data;
 using Mvc_Project.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Mvc_Project.Controllers
@@ -43,13 +40,24 @@ namespace Mvc_Project.Controllers
 
             return View(student);
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Upsert(Student student)
         {
+            // edit ka liye id check krna hoga
             if (student == null) return HttpNotFound();
-            if (!ModelState.IsValid)return View(student);
+
+            // Validate model
+            if (!ModelState.IsValid) return View(student);
+
+            // Check duplicate email (ignore current record when updating)
+            var duplicateEmail = context.Students
+                .FirstOrDefault(s => s.Email == student.Email && s.Id != student.Id);
+
+            if (duplicateEmail != null)
             {
+                ModelState.AddModelError("Email", "Email already exists.");
                 return View(student);
             }
 
@@ -60,15 +68,14 @@ namespace Mvc_Project.Controllers
             else
             {
                 var studentInDb = context.Students.Find(student.Id);
-                if (studentInDb == null)
-                {
-                    return HttpNotFound();
-                }
+                if (studentInDb == null) return HttpNotFound();
+
                 studentInDb.Name = student.Name;
                 studentInDb.Age = student.Age;
                 studentInDb.Address = student.Address;
                 studentInDb.Email = student.Email;
             }
+
             context.SaveChanges();
             return RedirectToAction("Index");
         }
