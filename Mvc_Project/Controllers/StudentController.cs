@@ -79,5 +79,35 @@ namespace Mvc_Project.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Details(int id)
+        {
+            {
+                var studentInDb = context.Students.Find(id);
+                if (studentInDb == null) return HttpNotFound();
+                return View(studentInDb);
+
+            }
+        }
+
+        public ActionResult Delete(int id)
+        {
+            {
+                var studentInDb = context.Students.Find(id);
+                if (studentInDb == null) return HttpNotFound();
+                return View(studentInDb);
+
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Student student)
+        {
+            var studentfromDb = context.Students.Find(student.Id);
+            if (studentfromDb == null) return HttpNotFound();
+            context.Students.Remove(studentfromDb);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -8,19 +8,9 @@ namespace Mvc_Project.CustomValidations
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            if (value == null)
-            {
-                return new ValidationResult("Age is required");
-            }
+          int age = Convert.ToInt32(value);
 
-            // Convert value to string then try parse to avoid exceptions for non-int types
-            string s = Convert.ToString(value);
-            if (!int.TryParse(s, out int age))
-            {
-                return new ValidationResult("Age must be a number");
-            }
-
-            if (age > 18)
+            if (age > 18&& age<25)
                 return ValidationResult.Success;
 
             return new ValidationResult("Age must be greater than 18");

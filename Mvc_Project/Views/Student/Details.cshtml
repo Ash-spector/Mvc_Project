@@ -1,0 +1,22 @@
+﻿@model Mvc_Project.Models.Student
+    <h2 class="text-bg-info text-center text-primary">Student Details</h2>
+<table class="table-striped table-active table-hover table-dark"> 
+    <thead>
+        <tr>
+            <th> Name</th>
+            <th> Age </th>
+            <th> Address </th>
+            <th> Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Name</td>
+            <td>@Model.Age </td>
+            <td> @Model.Address</td>
+            <td>@Model.Email</td>
+        </tr>
+    </tbody>
+</table>
+@Html.ActionLink("Back To List ","Index",new {@class="btn btn-success "} )<br/>
+@Html.ActionLink("Edit", "Upsert", new {id=Model.Id})
